@@ -1,27 +1,18 @@
 #include<stdio.h>
+
+int max(int a,int b){
+	return a > b ? a : b;
+}
+
 int main(){
-	int n,m,i,j,min;
+	int n,m;
 	scanf("%d%d",&n,&m);
-	int max=n;
-	if(m>n)
-	{
-	max=m;
-	min=n;
-	}
-	else
-		min=m;
-		for(i=1;i<=n;i++)
-		{
-			for(j=0;j<i;j++)
-			{
-				if(j<min)
-				printf("%c",97+max-j-1);
-			}
-			for(j=i+1;j<=m;j++)
-			{
-			printf("%c",97+max-i);
-			}
+	for(int i=1;i<=n;i++){
+		int init = max(n,m);
+		for(int j=1;j<=m;j++){
+			if(j<i) printf("%c",96 + init--);
+			else printf("%c",96 + init);
+		}
 		printf("\n");
-		}	
-	return 0;
+	}
 }

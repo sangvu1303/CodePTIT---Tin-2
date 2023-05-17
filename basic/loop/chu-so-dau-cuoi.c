@@ -1,9 +1,8 @@
 #include<stdio.h>
 #include<math.h>
 
-int n,a,dg;
 int main(){
-	scanf("%d",&n);
+	int n,a,dg;scanf("%d",&n);
 	a=n;
 	while(n>0){
 		dg=n%10;

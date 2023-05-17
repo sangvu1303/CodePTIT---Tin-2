@@ -8,10 +8,8 @@ int main(){
 			else if(i==0) printf("%d",j+1);
 			else if(i<b-j) printf("%d",i+j+1);
 			else if(i>=b) printf("%d",i-j+1);
-			else {
-			printf("%d",2*b-i-j-1);}
-				}	
-			printf("\n");
-		}
-	return 0;		
+			else printf("%d",2*b-i-j-1);
+		}	
+		printf("\n");
+	}		
 }

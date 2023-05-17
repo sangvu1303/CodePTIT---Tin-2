@@ -1,23 +1,13 @@
 #include<stdio.h>
 int main(){
-	int n,i,j;	
-	scanf("%d",&n);
+	int n,i,j;scanf("%d",&n);
 	for(i=1;i<=n;i++){
-		for(j=n;j>=1;j--)
-	{
-		if(j<=i){
-			printf("%d",2*i+1-2*j);
+		for(j=1;j<=n-i;j++) printf("~");
+		int cnt = 1;
+		for(j=1;j<=2*i-1;j++){
+			if(j<i) printf("%d",cnt), cnt +=2;
+			else printf("%d",cnt), cnt -=2;
 		}
-		else
-		printf("~");		
+		printf("\n");
 	}
-	if(i!=1){	
-	for(j=n+2;j<=2*n;j++){
-		if(i>=j-n)
-		printf("%d",2*i+1-2*(j-n));
-	}
-}
-	printf("\n");
-	}			
-	return 0;
 }

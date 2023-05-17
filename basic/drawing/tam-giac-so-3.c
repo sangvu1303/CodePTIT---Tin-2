@@ -1,18 +1,12 @@
 #include<stdio.h>
 int main(){
-	int n,i,j;
-	scanf("%d",&n);
+	int n,i,j;scanf("%d",&n);
 	for(i=1;i<=n;i++){
-		for(j=1;j<=2*i-1;j++)
-		{
-		if(i<=2*i-1){		
-		if(j<=(2*i-1)/2)
-		printf("%d",2*j-1);
-		else
-		printf("%d",2*j-1-4*(j-i));
-				}
+		int cnt = 1;
+		for(j=1;j<=2*i-1;j++){
+			if(j<i) printf("%d",cnt), cnt +=2;
+			else printf("%d",cnt), cnt -=2;
 		}
-	printf("\n");
-	}		
-	return 0;
+		printf("\n");
+	}
 }

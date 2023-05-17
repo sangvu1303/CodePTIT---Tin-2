@@ -1,26 +1,16 @@
 #include<stdio.h>
-int tong(int n){
-	int i,sum=0;
-	for(i=1;i<n;i++){
-		sum=sum+i;
-	}
-	return sum;
-}
+
 int main(){
-	int n,i,j;
-	scanf("%d",&n);
+	int n,i,j;scanf("%d",&n);
 	for(i=1;i<=n;i++){
-		
-		for(j=1;j<=n;j++){
-			if(i>=j){
-			if(i%2==1)
-			printf("%c ",tong(i)+j+96);
-			else
-			printf("%c ",tong(i+1)-j+97);
+		int cnt;
+		if(i%2==0) cnt = i*(i+1)/2;
+		else cnt = i*(i+1)/2 - i + 1;
+		for(j=1;j<=i;j++){
+			if(i%2==0) printf("%c ",96+cnt--);
+			else printf("%c ",96+cnt++);
 		}
-	}
 		printf("\n");
 	}
-	
 	return 0;
 }

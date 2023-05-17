@@ -1,22 +1,18 @@
 #include<stdio.h>
+
+int min(int a,int b){
+	return a < b ? a : b;
+}
+
 int main(){
-	int n,i,j,m;
+	int n,m;
 	scanf("%d%d",&n,&m);
-	int max=n,min=m;
-	if(m>n)
-	max=m,min=n;
-	for(i=64;i<n+64;i++){
-		for(j=64;j<m+64;j++)
-		{	
-			if(j>=i)
-			printf("%c",j);	
+	for(int i=1;i<=n;i++){
+		int init = min(i,m);
+		for(int j=1;j<=m;j++){
+			if(j<=m-i) printf("%c",(63 + init++));
+			else printf("%c",63 + init);
 		}
-		for(j=m+64;j<2*m+64;j++)
-		{	
-			if(j<i+m)
-			printf("%c",m+63);
-		}
-	printf("\n");
-	}	
-	return 0;
+		printf("\n");
+	}
 }

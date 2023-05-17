@@ -8,9 +8,7 @@ int main(){
 		}
 		for(j=1;j<=r;j++){
 			printf("*");
-			}	
-	printf("\n");
-	
-	}
-return 0;	
+		}	
+		printf("\n");
+	}	
 }
